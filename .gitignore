@@ -1,0 +1,10 @@
+# Files in src/
+src/crs
+src/mlog*.txt
+src/backup/
+src/lib/
+src/crs.lps
+src/*.res
+
+# Original Cederis Retail System/ directory
+Cederis Retail System/
