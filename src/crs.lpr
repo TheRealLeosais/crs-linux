@@ -19,7 +19,7 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   {$PUSH}{$WARN 5044 OFF}
-  Application.MainFormOnTaskbar:=True;
+  Application.MainFormOnTaskbar:=False;
   {$POP}
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);

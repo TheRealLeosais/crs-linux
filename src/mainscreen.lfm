@@ -10,9 +10,11 @@ object frmMain: TfrmMain
   Position = poScreenCenter
   LCLVersion = '4.8.0.0'
   WindowState = wsFullScreen
+  OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   object spbKey: TSpeedButton
+    Cursor = crHandPoint
     Left = 0
     Height = 75
     Top = 0
@@ -260,6 +262,236 @@ object frmMain: TfrmMain
       FFFFFFFFFFFFFFFF0000
     }
     OnClick = spbKeyClick
+  end
+  object lblBuildInfo: TLabel
+    Cursor = crIBeam
+    Left = 0
+    Height = 22
+    Top = 456
+    Width = 242
+    Caption = 'Cederis Retail System Linux - Build'
+    Font.Height = 15
+    ParentFont = False
+  end
+  object pnlMainDisplay: TPanel
+    Left = 340
+    Height = 90
+    Top = 0
+    Width = 300
+    Alignment = taLeftJustify
+    BevelOuter = bvNone
+    ClientHeight = 90
+    ClientWidth = 300
+    Color = clBlack
+    Font.Height = -12
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    object lblMainDisplay: TLabel
+      Cursor = crIBeam
+      Left = 0
+      Height = 90
+      Top = 0
+      Width = 300
+      Align = alClient
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clLime
+      Font.Height = -71
+      ParentBidiMode = False
+      ParentFont = False
+    end
+  end
+  object pnlNumpad: TPanel
+    Left = 340
+    Height = 300
+    Top = 180
+    Width = 300
+    ClientHeight = 300
+    ClientWidth = 300
+    TabOrder = 1
+    object btnNumpad0: TButton
+      Cursor = crHandPoint
+      Left = 0
+      Height = 75
+      Top = 225
+      Width = 75
+      Caption = '0'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 10
+      OnClick = btnNumpad0Click
+    end
+    object btnNumpad00: TButton
+      Cursor = crHandPoint
+      Left = 75
+      Height = 75
+      Top = 225
+      Width = 75
+      Caption = '00'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 11
+      OnClick = btnNumpad00Click
+    end
+    object btnNumpad1: TButton
+      Cursor = crHandPoint
+      Left = 0
+      Height = 75
+      Top = 150
+      Width = 75
+      Caption = '1'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 7
+      OnClick = btnNumpad1Click
+    end
+    object btnNumpad2: TButton
+      Cursor = crHandPoint
+      Left = 75
+      Height = 75
+      Top = 150
+      Width = 75
+      Caption = '2'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 8
+      OnClick = btnNumpad2Click
+    end
+    object btnNumpad3: TButton
+      Cursor = crHandPoint
+      Left = 150
+      Height = 75
+      Top = 150
+      Width = 75
+      Caption = '3'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 9
+      OnClick = btnNumpad3Click
+    end
+    object btnNumpad4: TButton
+      Cursor = crHandPoint
+      Left = 0
+      Height = 75
+      Top = 75
+      Width = 75
+      Caption = '4'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+      OnClick = btnNumpad4Click
+    end
+    object btnNumpad5: TButton
+      Cursor = crHandPoint
+      Left = 75
+      Height = 75
+      Top = 75
+      Width = 75
+      Caption = '5'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 5
+      OnClick = btnNumpad5Click
+    end
+    object btnNumpad6: TButton
+      Cursor = crHandPoint
+      Left = 150
+      Height = 75
+      Top = 75
+      Width = 75
+      Caption = '6'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 6
+      OnClick = btnNumpad6Click
+    end
+    object btnNumpad7: TButton
+      Cursor = crHandPoint
+      Left = 0
+      Height = 75
+      Top = 0
+      Width = 75
+      Caption = '7'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnNumpad7Click
+    end
+    object btnNumpad8: TButton
+      Cursor = crHandPoint
+      Left = 75
+      Height = 75
+      Top = 0
+      Width = 75
+      Caption = '8'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnNumpad8Click
+    end
+    object btnNumpad9: TButton
+      Cursor = crHandPoint
+      Left = 150
+      Height = 75
+      Top = 0
+      Width = 75
+      Caption = '9'
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      OnClick = btnNumpad9Click
+    end
+    object btnNumpadEnter: TButton
+      Cursor = crHandPoint
+      Left = 225
+      Height = 75
+      Top = 225
+      Width = 75
+      Caption = 'Enter'
+      Font.Height = -20
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 13
+      OnClick = btnNumpadEnterClick
+    end
+    object btnNumpadComma: TButton
+      Cursor = crHandPoint
+      Left = 150
+      Height = 75
+      Top = 224
+      Width = 75
+      Caption = ','
+      Font.Height = -47
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 12
+      OnClick = btnNumpadCommaClick
+    end
+    object btnVoidLast: TButton
+      Cursor = crNo
+      Left = 225
+      Height = 75
+      Top = 0
+      Width = 75
+      Caption = 'Void Last Item'
+      Enabled = False
+      Font.Height = -17
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+    end
   end
   object tmrUpdateScreen: TTimer
     Enabled = False
