@@ -10,6 +10,7 @@ object frmMain: TfrmMain
   Position = poScreenCenter
   LCLVersion = '4.8.0.0'
   WindowState = wsFullScreen
+  OnActivate = FormActivate
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyPress = FormKeyPress
@@ -273,14 +274,14 @@ object frmMain: TfrmMain
     Font.Height = 15
     ParentFont = False
   end
-  object pnlMainDisplay: TPanel
+  object pnlDisplay: TPanel
     Left = 340
-    Height = 90
+    Height = 180
     Top = 0
     Width = 300
     Alignment = taLeftJustify
     BevelOuter = bvNone
-    ClientHeight = 90
+    ClientHeight = 180
     ClientWidth = 300
     Color = clBlack
     Font.Height = -12
@@ -288,18 +289,39 @@ object frmMain: TfrmMain
     ParentColor = False
     ParentFont = False
     TabOrder = 0
-    object lblMainDisplay: TLabel
+    object pnlMain: TPanel
       Cursor = crIBeam
       Left = 0
       Height = 90
       Top = 0
       Width = 300
-      Align = alClient
-      Font.CharSet = ANSI_CHARSET
+      Alignment = taRightJustify
+      BevelColor = clBlack
+      Color = clBlack
       Font.Color = clLime
-      Font.Height = -71
+      Font.Height = -12
+      ParentBackground = False
       ParentBidiMode = False
+      ParentColor = False
       ParentFont = False
+      TabOrder = 0
+    end
+    object pnlSub: TPanel
+      Cursor = crIBeam
+      Left = 0
+      Height = 90
+      Top = 90
+      Width = 300
+      Alignment = taLeftJustify
+      BevelColor = clBlack
+      Color = clBlack
+      Font.Color = clLime
+      Font.Height = -12
+      ParentBackground = False
+      ParentBidiMode = False
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 1
     end
   end
   object pnlNumpad: TPanel
@@ -320,7 +342,7 @@ object frmMain: TfrmMain
       Font.Height = -47
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 10
+      TabOrder = 12
       OnClick = btnNumpad0Click
     end
     object btnNumpad00: TButton
@@ -333,7 +355,7 @@ object frmMain: TfrmMain
       Font.Height = -47
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 11
+      TabOrder = 13
       OnClick = btnNumpad00Click
     end
     object btnNumpad1: TButton
@@ -346,7 +368,7 @@ object frmMain: TfrmMain
       Font.Height = -47
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 7
+      TabOrder = 8
       OnClick = btnNumpad1Click
     end
     object btnNumpad2: TButton
@@ -359,7 +381,7 @@ object frmMain: TfrmMain
       Font.Height = -47
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 8
+      TabOrder = 9
       OnClick = btnNumpad2Click
     end
     object btnNumpad3: TButton
@@ -372,7 +394,7 @@ object frmMain: TfrmMain
       Font.Height = -47
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 9
+      TabOrder = 10
       OnClick = btnNumpad3Click
     end
     object btnNumpad4: TButton
@@ -463,7 +485,7 @@ object frmMain: TfrmMain
       Font.Height = -20
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 13
+      TabOrder = 15
       OnClick = btnNumpadEnterClick
     end
     object btnNumpadComma: TButton
@@ -476,22 +498,82 @@ object frmMain: TfrmMain
       Font.Height = -47
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 12
+      TabOrder = 14
       OnClick = btnNumpadCommaClick
     end
-    object btnVoidLast: TButton
+    object btnNumpadVoidLast: TButton
       Cursor = crNo
       Left = 225
       Height = 75
       Top = 0
       Width = 75
-      Caption = 'Void Last Item'
+      Caption = 'Void Last'
       Enabled = False
-      Font.Height = -17
+      Font.Height = -13
       Font.Style = [fsBold]
       ParentFont = False
       TabOrder = 3
+      OnClick = btnNumpadVoidLastClick
     end
+    object btnNumpadVoidSale: TButton
+      Cursor = crNo
+      Left = 225
+      Height = 75
+      Top = 75
+      Width = 75
+      Caption = 'Void Sale'
+      Enabled = False
+      Font.Height = -13
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 7
+      OnClick = btnNumpadVoidSaleClick
+    end
+    object btnNumpadAdd: TButton
+      Cursor = crHandPoint
+      Left = 225
+      Height = 75
+      Top = 150
+      Width = 75
+      Caption = 'Add'
+      Font.Height = -20
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 11
+      OnClick = btnNumpadAddClick
+    end
+  end
+  object pnlMTitle: TPanel
+    Cursor = crIBeam
+    Left = 150
+    Height = 90
+    Top = 0
+    Width = 190
+    Caption = 'Subtotal'
+    Font.Height = -40
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+  object pnlSTitle: TPanel
+    Cursor = crIBeam
+    Left = 150
+    Height = 90
+    Top = 90
+    Width = 190
+    Caption = 'Tax'
+    Font.Height = -40
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+  end
+  object stgItems: TStringGrid
+    Left = 0
+    Height = 225
+    Top = 180
+    Width = 340
+    TabOrder = 4
+    TitleStyle = tsNative
   end
   object tmrUpdateScreen: TTimer
     Enabled = False
